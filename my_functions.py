@@ -124,3 +124,17 @@ def select_variables(ds, name, variables_wanted):
     ds = ds[variables_wanted]
     ds = ds.drop_vars(["number"]) 
     return ds
+
+def stat_variables(df, vars):
+    """Print min, median, max, and quantiles for one or more variables."""
+    if isinstance(vars, str):
+        vars = [vars]
+    
+    for var in vars:
+        print(f"--- {var} ---")
+        print(f"Min:    {df[var].min()}")
+        print(f"Median: {df[var].median()}")
+        print(f"Max:    {df[var].max()}")
+        print(f"\nQuantiles:")
+        print(df[var].quantile([0.50, 0.75, 0.90, 0.95]))
+        print()
