@@ -122,5 +122,5 @@ def plotting_func(ds, variable, date=None, valid_time=None):
 def select_variables(ds, name, variables_wanted):
     ds['location'] = ('valid_time', [name] * len(ds.valid_time))
     ds = ds[variables_wanted]
-    ds = ds.drop_vars(["number", "expver"]) 
+    ds = ds.drop_vars(["number"]) 
     return ds
