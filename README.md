@@ -24,5 +24,7 @@ Variables:
 - Computing daily anomalies of min sea surface pressure, max mean wind speed, and max significant height of wind waves, swell and combined waves.
 - Identification of extreme forcing and event dates
 - Visualization of extreme dates to select regions
+- Resampling.
+- Trimming in order to keep extreme values.
 - Converting data into a data frame.
-- Exporting to CSV.
+- Exporting to CSV and XLSX.
