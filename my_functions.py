@@ -118,3 +118,9 @@ def plotting_func(ds, variable, date=None, valid_time=None):
     gl.right_labels = False
     
     return plt.show()
+
+def select_variables(ds, name, variables_wanted):
+    ds['location'] = ('valid_time', [name] * len(ds.valid_time))
+    ds = ds[variables_wanted]
+    ds = ds.drop_vars(["number", "expver"]) 
+    return ds
